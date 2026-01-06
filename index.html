@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Library</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container my-4">
+    <h1 class="text-center mb-4">My Music Library</h1>
+
+    <!-- Search and Sort Controls -->
+    <div class="row mb-3">
+      <div class="col-md-6 mb-2">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by artist or album...">
+      </div>
+      <div class="col-md-6 mb-2 text-md-end">
+        <select id="sortSelect" class="form-select w-auto d-inline">
+          <option value="">Sort By</option>
+          <option value="artist">Artist (A-Z)</option>
+          <option value="album">Album (A-Z)</option>
+          <option value="tracks-asc">Tracks (Ascending)</option>
+          <option value="tracks-desc">Tracks (Descending)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Album Grid -->
+    <div class="row" id="albumGrid">
+      <!-- Dynamic album cards will be inserted here -->
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="tracklistModal" tabindex="-1" aria-labelledby="tracklistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tracklistModalLabel">Album Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="albumStats" class="mb-3"></div>
+          <table class="table table-striped tracklist-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Track</th>
+                <th>Length</th>
+              </tr>
+            </thead>
+            <tbody id="tracklistBody">
+              <!-- Tracks will be dynamically inserted -->
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a href="#" id="spotifyLink" target="_blank" class="btn btn-success">Play on Spotify</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close Tracklist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional Back to Top button -->
+  <button id="backToTop" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 d-none">
+    ↑
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="app.js"></script>
+</body>
+</html>

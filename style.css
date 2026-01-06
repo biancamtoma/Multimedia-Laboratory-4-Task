@@ -1,0 +1,46 @@
+/* Album Cards */
+.album-card {
+  height: 100%;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.album-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Album Images */
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+}
+
+/* Card Footer */
+.card-footer {
+  text-align: center;
+}
+
+/* Overlay with Album Name */
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Tracklist Table */
+.tracklist-table td,
+.tracklist-table th {
+  padding: 0.25rem 0.5rem;
+}
+
+/* Back to top button */
+#backToTop {
+  width: 40px;
+  height: 40px;
+  line-height: 1;
+  padding: 0;
+}
